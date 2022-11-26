@@ -38,10 +38,12 @@ function removeContact(contactId) {
 }
 
 function addContact(name, email, phone) {
+    /*
     const contact = { name, email, phone };
+    */
     listContacts()
         .then((data) => {
-            data.push(contact);
+            data.push({ name, email, phone, id: (data.length + 1).toString() });
             console.table(data);
             return data;
         })
